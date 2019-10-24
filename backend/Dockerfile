@@ -4,14 +4,14 @@
 FROM python:3.6
 
 # Adding backend directory to make absolute filepaths consistent across services
-WORKDIR /read.me/backend
+WORKDIR /app/backend
 
 # Install python dependencies
-COPY requirements.txt /read.me/backend
+COPY requirements.txt /app/backend
 RUN pip3 install --upgrade pip -r requirements.txt
 
 # Adding the rest of the code
-COPY . /read.me/backend
+COPY . /app/backend
 
 # Making port 8000 available for the application
 EXPOSE 8000
